@@ -1,11 +1,15 @@
-package modal;
+package src.br.com.dio.model;
+
 
 public class Space {
-
-    private Integer actual;
+    // o que o usuário vai inserir
+    private Integer actual; 
+    // o valor esperado
     private final int expected;
+    // se pode ser alterado
     private final boolean fixed;
 
+    // criando um construtor
     public Space(final int expected, final boolean fixed) {
         this.expected = expected;
         this.fixed = fixed;
@@ -14,11 +18,12 @@ public class Space {
         }
     }
 
+    // get e setter 
     public Integer getActual() {
         return actual;
     }
 
-     public void setActual(Integer actual) {
+    public void setActual(Integer actual) {
      if (fixed) return;  
     this.actual = actual;
     }

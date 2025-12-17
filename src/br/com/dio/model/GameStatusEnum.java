@@ -1,4 +1,5 @@
-package modal;
+package src.br.com.dio.model;
+
 
 public enum GameStatusEnum {
 

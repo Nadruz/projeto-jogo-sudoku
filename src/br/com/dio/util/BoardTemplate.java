@@ -1,12 +1,11 @@
-package util;
-//Final para não ser herdada por nenhuma classe
-public final class BoardTemplate {
+package src.br.com.dio.util;
 
-    //Privado para não ser instanciada 
-    private BoardTemplate() {}
+public final class BoardTemplate {
     
-         public final static String BOARD_TEMPLATE =
-            """
+    private BoardTemplate() {}
+
+        public final static String BOARD_TEMPLATE =  
+        """
             *************************************************************************************
             *|---0---||---1---||---2---|*|---3---||---4---||---5---|*|---6---||---7---||---8---|*
             *|       ||       ||       |*|       ||       ||       |*|       ||       ||       |*
@@ -58,4 +57,3 @@ public final class BoardTemplate {
             *************************************************************************************
             """;
 }
-
