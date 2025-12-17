@@ -39,6 +39,32 @@ public class Board {
         return spaces.stream().flatMap(Collection::stream).anyMatch(s -> nonNull(s.getActual()) && !s.getActual().equals(s.getExpected()));
     }
 
+    public boolean changeValue(final int col, final int row, final int value) {
+        var space = spaces.get(col).get(row);
+        if(space.isFixed()){
+            return false;
+        }
 
+        space.setActual(value);
+        return true;
+    }
+
+    public boolean clearValue(final int col, final int row){
+        var space = spaces.get(col).get(row);
+        if(space.isFixed()){
+            return false;
+        }
+
+        space.clearSpace();
+        return true;
+    }
+
+    public void reset (){
+        spaces.forEach(c -> c.forEach(Space::clearSpace));
+    }
+
+    public boolean gameIsFinished(){
+        return !hasErrors() && getStatus() == COMPLETE;
+    }
 
 }
